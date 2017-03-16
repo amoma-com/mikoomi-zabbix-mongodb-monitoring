@@ -8,6 +8,8 @@ The plugin monitors availability, resource utilization, health, performance and 
 Coupled with the Zabbix OS level monitoring, the MongoDB plugin provides great peace of mind knowing that MongoDB is 
 being monitored 24x7 and sufficient data would be available for sizing, scalability, troubleshooting and support.
 
+This plugin was forked from [https://github.com/nightw/mikoomi-zabbix-mongodb-monitoring](nightw/mikoomi-zabbix-mongodb-monitoring) and updated for PHP 7.
+
 Important notes on Zabbix and MongoDB versions
 ==============================================
 
