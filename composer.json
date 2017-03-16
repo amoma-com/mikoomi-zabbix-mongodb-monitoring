@@ -1,0 +1,26 @@
+{
+  "name": "amoma/zabbix-mongodb-monitoring",
+  "description": "Mongodb monitoring",
+  "keywords": [
+    "zabbix",
+    "mongodb",
+    "monitoring"
+  ],
+  "type": "API",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Amoma LLC",
+      "homepage": "https://www.amoma.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.0",
+    "mongodb/mongodb": "1.1.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "MongodbZabbix\\": "src/"
+    }
+  }
+}

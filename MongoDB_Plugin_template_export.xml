@@ -4,21 +4,15 @@
     <date>2016-02-08T00:00:00Z</date>
     <groups>
         <group>
-            <name>Mikoomi Templates</name>
-        </group>
-        <group>
             <name>Templates</name>
         </group>
     </groups>
     <templates>
         <template>
-            <template>Template App MongoDB</template>
-            <name>Template App MongoDB</name>
+            <template>Template MongoDB</template>
+            <name>Template MongoDB</name>
             <description/>
             <groups>
-                <group>
-                    <name>Mikoomi Templates</name>
-                </group>
                 <group>
                     <name>Templates</name>
                 </group>
@@ -2739,7 +2733,7 @@
                     <logtimefmt/>
                 </item>
                 <item>
-                    <name>MongoDB: Replication: Is Mongo Server Part of a ReplicatSet</name>
+                    <name>MongoDB: Replication: Is MongoConnection Server Part of a ReplicatSet</name>
                     <type>2</type>
                     <snmp_community/>
                     <multiplier>0</multiplier>
@@ -2954,7 +2948,7 @@
                     <logtimefmt/>
                 </item>
                 <item>
-                    <name>MongoDB: Sharding: Is Mongo Server a Cluster Router (mongos process)</name>
+                    <name>MongoDB: Sharding: Is MongoConnection Server a Cluster Router (mongos process)</name>
                     <type>2</type>
                     <snmp_community/>
                     <multiplier>0</multiplier>
@@ -3689,7 +3683,7 @@
     </templates>
     <triggers>
         <trigger>
-            <expression>{Template App MongoDB:mongodb.plugin.checksum.nodata(300)}=1</expression>
+            <expression>{Template MongoDB:mongodb.plugin.checksum.nodata(300)}=1</expression>
             <name>MongoDB: No Data Received in 5 minutes</name>
             <url/>
             <status>0</status>
@@ -3699,7 +3693,7 @@
             <dependencies/>
         </trigger>
         <trigger>
-            <expression>{Template App MongoDB:mongodb.total.collection.count.last(0)}&gt;{Template App MongoDB:mongodb.total.collection.count.last(1)}</expression>
+            <expression>{Template MongoDB:mongodb.total.collection.count.last(0)}&gt;{Template MongoDB:mongodb.total.collection.count.last(1)}</expression>
             <name>MongoDB: One or more collections have been added</name>
             <url/>
             <status>0</status>
@@ -3709,7 +3703,7 @@
             <dependencies/>
         </trigger>
         <trigger>
-            <expression>{Template App MongoDB:mongodb.total.collection.count.last(0)}&lt;{Template App MongoDB:mongodb.total.collection.count.last(1)}</expression>
+            <expression>{Template MongoDB:mongodb.total.collection.count.last(0)}&lt;{Template MongoDB:mongodb.total.collection.count.last(1)}</expression>
             <name>MongoDB: One or more collections have been dropped</name>
             <url/>
             <status>0</status>
@@ -3719,7 +3713,7 @@
             <dependencies/>
         </trigger>
         <trigger>
-            <expression>{Template App MongoDB:mongodb.db.count.last(0)}&gt;{Template App MongoDB:mongodb.db.count.last(1)}</expression>
+            <expression>{Template MongoDB:mongodb.db.count.last(0)}&gt;{Template MongoDB:mongodb.db.count.last(1)}</expression>
             <name>MongoDB: One or more databases have been created</name>
             <url/>
             <status>0</status>
@@ -3729,7 +3723,7 @@
             <dependencies/>
         </trigger>
         <trigger>
-            <expression>{Template App MongoDB:mongodb.db.count.last(0)}&lt;{Template App MongoDB:mongodb.db.count.last(1)}</expression>
+            <expression>{Template MongoDB:mongodb.db.count.last(0)}&lt;{Template MongoDB:mongodb.db.count.last(1)}</expression>
             <name>MongoDB: One or more databases have been destroyed</name>
             <url/>
             <status>0</status>
@@ -3739,7 +3733,7 @@
             <dependencies/>
         </trigger>
         <trigger>
-            <expression>{Template App MongoDB:mongodb.total.index.count.last(0)}&gt;{Template App MongoDB:mongodb.total.index.count.last(1)}</expression>
+            <expression>{Template MongoDB:mongodb.total.index.count.last(0)}&gt;{Template MongoDB:mongodb.total.index.count.last(1)}</expression>
             <name>MongoDB: One or more indexes have been added</name>
             <url/>
             <status>0</status>
@@ -3749,7 +3743,7 @@
             <dependencies/>
         </trigger>
         <trigger>
-            <expression>{Template App MongoDB:mongodb.total.index.count.last(0)}&lt;{Template App MongoDB:mongodb.total.index.count.last(1)}</expression>
+            <expression>{Template MongoDB:mongodb.total.index.count.last(0)}&lt;{Template MongoDB:mongodb.total.index.count.last(1)}</expression>
             <name>MongoDB: One or more indexes have been dropped</name>
             <url/>
             <status>0</status>
@@ -3759,7 +3753,7 @@
             <dependencies/>
         </trigger>
         <trigger>
-            <expression>{Template App MongoDB:mongodb.replica_set_member_count.last(0)}&gt;{Template App MongoDB:mongodb.replica_set_member_count.last(1)}</expression>
+            <expression>{Template MongoDB:mongodb.replica_set_member_count.last(0)}&gt;{Template MongoDB:mongodb.replica_set_member_count.last(1)}</expression>
             <name>MongoDB: One or more members have been added to the ReplicaSet</name>
             <url/>
             <status>0</status>
@@ -3769,7 +3763,7 @@
             <dependencies/>
         </trigger>
         <trigger>
-            <expression>{Template App MongoDB:mongodb.replica_set_member_count.last(0)}&lt;{Template App MongoDB:mongodb.replica_set_member_count.last(1)}</expression>
+            <expression>{Template MongoDB:mongodb.replica_set_member_count.last(0)}&lt;{Template MongoDB:mongodb.replica_set_member_count.last(1)}</expression>
             <name>MongoDB: One or more members have been removed from the ReplicaSet</name>
             <url/>
             <status>0</status>
@@ -3779,7 +3773,7 @@
             <dependencies/>
         </trigger>
         <trigger>
-            <expression>{Template App MongoDB:mongodb.shard_chunk_count.last(0)}&gt;{Template App MongoDB:mongodb.shard_chunk_count.last(1)}</expression>
+            <expression>{Template MongoDB:mongodb.shard_chunk_count.last(0)}&gt;{Template MongoDB:mongodb.shard_chunk_count.last(1)}</expression>
             <name>MongoDB: One or more new shard chunks have been created</name>
             <url/>
             <status>0</status>
@@ -3789,7 +3783,7 @@
             <dependencies/>
         </trigger>
         <trigger>
-            <expression>{Template App MongoDB:mongodb.sharded_collections_count.last(0)}&gt;{Template App MongoDB:mongodb.sharded_collections_count.last(1)}</expression>
+            <expression>{Template MongoDB:mongodb.sharded_collections_count.last(0)}&gt;{Template MongoDB:mongodb.sharded_collections_count.last(1)}</expression>
             <name>MongoDB: One or more new sharded collections have been created</name>
             <url/>
             <status>0</status>
@@ -3799,7 +3793,7 @@
             <dependencies/>
         </trigger>
         <trigger>
-            <expression>{Template App MongoDB:mongodb.repl_member_attention_state_count.last(0)}&gt;0</expression>
+            <expression>{Template MongoDB:mongodb.repl_member_attention_state_count.last(0)}&gt;0</expression>
             <name>MongoDB: One or more replication members need attention</name>
             <url/>
             <status>0</status>
@@ -3809,7 +3803,7 @@
             <dependencies/>
         </trigger>
         <trigger>
-            <expression>{Template App MongoDB:mongodb.shard_count.last(0)}&gt;{Template App MongoDB:mongodb.shard_count.last(1)}</expression>
+            <expression>{Template MongoDB:mongodb.shard_count.last(0)}&gt;{Template MongoDB:mongodb.shard_count.last(1)}</expression>
             <name>MongoDB: One or more shards have been added to the cluster</name>
             <url/>
             <status>0</status>
@@ -3819,7 +3813,7 @@
             <dependencies/>
         </trigger>
         <trigger>
-            <expression>{Template App MongoDB:mongodb.shard_count.last(0)}&lt;{Template App MongoDB:mongodb.shard_count.last(1)}</expression>
+            <expression>{Template MongoDB:mongodb.shard_count.last(0)}&lt;{Template MongoDB:mongodb.shard_count.last(1)}</expression>
             <name>MongoDB: One or more shards have been removed from the cluster</name>
             <url/>
             <status>0</status>
@@ -3856,7 +3850,7 @@
                     <calc_fnc>7</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template App MongoDB</host>
+                        <host>Template MongoDB</host>
                         <key>mongodb.opcounters.query</key>
                     </item>
                 </graph_item>
@@ -3868,7 +3862,7 @@
                     <calc_fnc>7</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template App MongoDB</host>
+                        <host>Template MongoDB</host>
                         <key>mongodb.opcounters.insert</key>
                     </item>
                 </graph_item>
@@ -3880,7 +3874,7 @@
                     <calc_fnc>7</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template App MongoDB</host>
+                        <host>Template MongoDB</host>
                         <key>mongodb.opcounters.update</key>
                     </item>
                 </graph_item>
@@ -3892,7 +3886,7 @@
                     <calc_fnc>7</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template App MongoDB</host>
+                        <host>Template MongoDB</host>
                         <key>mongodb.opcounters.delete</key>
                     </item>
                 </graph_item>
@@ -3904,7 +3898,7 @@
                     <calc_fnc>7</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template App MongoDB</host>
+                        <host>Template MongoDB</host>
                         <key>mongodb.opcounters.command</key>
                     </item>
                 </graph_item>
@@ -3916,7 +3910,7 @@
                     <calc_fnc>7</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template App MongoDB</host>
+                        <host>Template MongoDB</host>
                         <key>mongodb.opcounters.getmore</key>
                     </item>
                 </graph_item>
@@ -3948,7 +3942,7 @@
                     <calc_fnc>7</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template App MongoDB</host>
+                        <host>Template MongoDB</host>
                         <key>mongodb.backgroundFlushing.average_ms</key>
                     </item>
                 </graph_item>
@@ -3960,7 +3954,7 @@
                     <calc_fnc>7</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template App MongoDB</host>
+                        <host>Template MongoDB</host>
                         <key>mongodb.backgroundFlushing.last_ms</key>
                     </item>
                 </graph_item>
@@ -3972,7 +3966,7 @@
                     <calc_fnc>7</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template App MongoDB</host>
+                        <host>Template MongoDB</host>
                         <key>mongodb.backgroundFlushing.total_ms</key>
                     </item>
                 </graph_item>
@@ -4004,7 +3998,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template App MongoDB</host>
+                        <host>Template MongoDB</host>
                         <key>mongodb.indexCounters.btree.hits</key>
                     </item>
                 </graph_item>
@@ -4016,7 +4010,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template App MongoDB</host>
+                        <host>Template MongoDB</host>
                         <key>mongodb.indexCounters.btree.misses</key>
                     </item>
                 </graph_item>
@@ -4048,7 +4042,7 @@
                     <calc_fnc>7</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template App MongoDB</host>
+                        <host>Template MongoDB</host>
                         <key>mongodb.mem.virtual</key>
                     </item>
                 </graph_item>
@@ -4060,7 +4054,7 @@
                     <calc_fnc>7</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template App MongoDB</host>
+                        <host>Template MongoDB</host>
                         <key>mongodb.extra_info.heap_usage</key>
                     </item>
                 </graph_item>
@@ -4072,7 +4066,7 @@
                     <calc_fnc>7</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template App MongoDB</host>
+                        <host>Template MongoDB</host>
                         <key>mongodb.mem.resident</key>
                     </item>
                 </graph_item>
@@ -4104,7 +4098,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template App MongoDB</host>
+                        <host>Template MongoDB</host>
                         <key>mongodb.network.outbound.traffic_mbit_per_second</key>
                     </item>
                 </graph_item>
@@ -4116,7 +4110,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template App MongoDB</host>
+                        <host>Template MongoDB</host>
                         <key>mongodb.network.inbound.traffic_mbit_per_second</key>
                     </item>
                 </graph_item>
@@ -4148,7 +4142,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template App MongoDB</host>
+                        <host>Template MongoDB</host>
                         <key>mongodb.globalLock.currentQueue.readers</key>
                     </item>
                 </graph_item>
@@ -4160,7 +4154,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template App MongoDB</host>
+                        <host>Template MongoDB</host>
                         <key>mongodb.globalLock.currentQueue.writers</key>
                     </item>
                 </graph_item>
@@ -4192,7 +4186,7 @@
                     <calc_fnc>7</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template App MongoDB</host>
+                        <host>Template MongoDB</host>
                         <key>mongodb.total.size</key>
                     </item>
                 </graph_item>
