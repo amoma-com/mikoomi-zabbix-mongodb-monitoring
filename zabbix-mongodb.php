@@ -61,10 +61,16 @@ $mongoMonitorer = new MongodbZabbix\MongoMonitorer(
 );
 
 // Fetching all server status.
-$mongoMonitorer->getServerStatus();
+$serverStatus = $mongoMonitorer->getServerStatus();
+
+$mongoMonitorer->saveServerStatus($serverStatus);
 
 // Get cumulative DB Info
 $mongoMonitorer->getCumulativeDatabaseInfo();
+
+if (array_key_exists('repl', $serverStatus)) {
+    $this->getReplicaInfo();
+}
 
 // Get data collection end time (we will use this to compute the total data collection time)
 $end_time = time() ;

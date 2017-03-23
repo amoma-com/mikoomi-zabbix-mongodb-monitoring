@@ -32,6 +32,9 @@ class MongoMonitorer
         $this->mongoDbClient = $mongoDbClient;
     }
 
+    /**
+     * @return array
+     */
     public function getServerStatus()
     {
         //-----------------------------
@@ -48,6 +51,11 @@ class MongoMonitorer
             exit;
         }
 
+        return $serverStatus;
+    }
+
+    public function saveServerStatus($serverStatus)
+    {
         $this->dataCollector->writeData("version", $serverStatus['version']);
         $this->dataCollector->writeData("uptime", $serverStatus['uptime']);
 
@@ -172,12 +180,10 @@ class MongoMonitorer
 
         if ($isSharded) {
             $this->getShardInfo();
-        } else {
-            $this->getReplicaInfo();
         }
     }
 
-    private function getReplicaInfo()
+    public function getReplicaInfo()
     {
         $mongo_db_handle = $this->mongoDbClient->selectDatabase('admin');
         $cursor = $mongo_db_handle->command(array('replSetGetStatus' => 1));
